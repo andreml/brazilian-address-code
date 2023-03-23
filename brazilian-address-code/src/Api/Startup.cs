@@ -45,7 +45,7 @@ namespace brazilian_address_code
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Teste");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "1.0.0");
             });
 
             app.UseRouting();
