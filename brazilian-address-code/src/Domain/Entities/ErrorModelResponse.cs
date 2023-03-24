@@ -1,6 +1,6 @@
 ﻿namespace Domain.Entities
 {
-    public class ErrorResponse
+    public class ErrorModelResponse
     {
         public int Code { get; set; }
         public string Message { get; set; }

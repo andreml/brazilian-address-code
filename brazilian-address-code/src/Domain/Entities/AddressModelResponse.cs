@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Domain.Entities
 {
-    public class AddressResponse
+    public class AddressModelResponse
     {
         public string Cep { get; set; }
         public string Logradouro { get; set; }
