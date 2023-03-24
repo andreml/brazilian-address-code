@@ -1,27 +1,24 @@
 ﻿using Domain.Entities;
+using Domain.Interfaces;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace App.Service
+namespace Infraestucture.Service
 {
-    public class AddressService
+    public class AddressService : IAddressService
     {
-        HttpClient _;
+        HttpClient _client;
         public AddressService()
         {
-            _ = new HttpClient();
+            _client = new HttpClient();
         }
 
-        public async Task<AddressResponse> GetAddressByZipCode(string code)
+        public async Task<AddressModelResponse> GetAddressByZipCode(string code)
         {
             var url = $"https://viacep.com.br/ws/{code}/json/".Replace("-","");
-            var response = await _.GetAsync(url);
+            var response = await _client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)
             {
@@ -29,7 +26,7 @@ namespace App.Service
 
                 if (validResult.Contains("true")) return null;
                 
-                var result = JsonConvert.DeserializeObject<AddressResponse>(validResult);
+                var result = JsonConvert.DeserializeObject<AddressModelResponse>(validResult);
                 return result;
             }
             else

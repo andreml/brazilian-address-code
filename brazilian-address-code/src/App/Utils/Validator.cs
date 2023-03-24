@@ -2,10 +2,9 @@
 
 namespace Domain.Entities
 {
-    public class Address
+    public static class Validator
     {
-        public string zipCode { get; set; }
-        public bool IsValid()
+        public static bool IsValid(string zipCode)
         {
             if (string.IsNullOrEmpty(zipCode)) { return false; }
             if (Regex.Matches(zipCode.Replace("-", ""), @"[a-zA-Z]").Count > 0) return false;

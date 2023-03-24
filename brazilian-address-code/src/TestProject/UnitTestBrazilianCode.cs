@@ -1,7 +1,5 @@
-using App.Service;
 using Domain.Entities;
-using System;
-using System.Collections.Generic;
+using Infraestucture.Service;
 using Xunit;
 
 namespace TestProject
@@ -10,18 +8,14 @@ namespace TestProject
     {
         [Fact]
         public void ErrorValidateZipCodeRequest()
-        {
-            var address = new Address();
-            address.zipCode = "032671AV";
-            Assert.False(address.IsValid());
+        {          
+            Assert.False(Validator.IsValid("032671AV"));
         }
 
         [Fact]
         public void SuccessValidateZipCodeRequest()
         {
-            var address = new Address();
-            address.zipCode = "01001-000";
-            Assert.True(address.IsValid());
+            Assert.True(Validator.IsValid("01001-000"));
         }
 
         [Fact]
