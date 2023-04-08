@@ -35,3 +35,6 @@
 /brazilian-address-code/src/Infraestucture/Infraestucture.csproj
 /brazilian-address-code/src/TestProject/bin/Debug/netcoreapp3.1
 /brazilian-address-code/src/TestProject/obj
+/brazilian-address-code/DI/obj
+/brazilian-address-code/src/DI/bin/Debug/netcoreapp3.1
+/brazilian-address-code/src/DI/obj
