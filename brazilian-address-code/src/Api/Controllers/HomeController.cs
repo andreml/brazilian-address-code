@@ -20,7 +20,7 @@ namespace brazilian_address_code.Controllers
         }
         [HttpGet("{zipCode}")]
         [Produces("application/json")]
-        [SwaggerResponse((int)HttpStatusCode.OK, "Return Address", typeof(AddressModelResponse)]
+        [SwaggerResponse((int)HttpStatusCode.OK, "Return Address", typeof(AddressModelResponse))]
         [SwaggerResponse((int)HttpStatusCode.NotFound, "Address not found!", typeof(ErrorModelResponse))]
         [SwaggerResponse((int)HttpStatusCode.BadRequest, "Invalid zipCode or another error", typeof(ErrorModelResponse))]
         public async Task<IActionResult> Index(string zipCode)
